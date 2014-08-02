@@ -39,7 +39,7 @@ describe('Postgres', function () {
 		
 		db.raw(downSql+upSql)
 			.then(function() {
-				self.backend = new KnexBackend(db, 'acl_');
+				self.backend = new KnexBackend(db, 'postgres', 'acl_');
 				done();
 			})
 		;
