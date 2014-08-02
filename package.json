@@ -31,10 +31,12 @@
 		"load-grunt-tasks": "0.6.0",
 		"grunt-contrib-jshint": "0.9.2",
 		"mocha": "1.21.3",
-		"chai": "1.9.1"
+		"chai": "1.9.1",
+		"coveralls": "2.11.1",
+		"istanbul": "0.3.0"
 	},
 	"scripts": {
 		"test": "mocha test/runner.js --reporter spec",
-		"cover": "istanbul cover -- _mocha test/runner.js --reporter spec"
+		"coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
 	}
 }
