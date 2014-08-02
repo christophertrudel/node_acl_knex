@@ -48,12 +48,30 @@ describe('Postgres', function () {
 	run();
 });
 
+// Mysql and SQLite support coming soon.
+
 // describe('MySql', function () {
 // 	before(function (done) {
 // 		var self = this;
 // 		var db = knex({
-// 			client: 'mysql'
+// 			client: 'mysql',
+// 			connection: {
+// 				host: '127.0.0.1',
+// 				port: 3306,
+// 				user: 'root',
+// 				password: ''
+// 				database: 'travis_ci_test'
+// 			}
 // 		});
+		
+// 		var downSql = 'DROP TABLE IF EXISTS acl_meta, acl_resources, acl_parents, acl_users, acl_permissions';
+		
+// 		db.raw(downSql)
+// 			.then(function() {
+// 				self.backend = new KnexBackend(db, 'mysql', 'acl_');
+// 				done();
+// 			})
+// 		;
 		
 // 	});
 	
@@ -64,7 +82,10 @@ describe('Postgres', function () {
 // 	before(function (done) {
 // 		var self = this;
 // 		var db = knex({
-// 			client: 'sqlite'
+// 			client: 'sqlite',
+// 			connection: {
+// 				filename: './travis_ci_test.sqlite'
+// 			}
 // 		});
 		
 // 	});
