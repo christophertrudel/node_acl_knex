@@ -1,4 +1,4 @@
-node_acl_knex
+Node Acl KnexBackend
 =============
 
 A Knex.js backend for node_acl
