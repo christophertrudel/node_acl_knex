@@ -8,6 +8,21 @@ Knex is a query builder for PostgreSQL, MySQL and SQLite3 in Node, The Knex back
 
 [![BuildStatus](https://travis-ci.org/christophertrudel/node_acl_knex.svg?branch=master)](https://travis-ci.org/christophertrudel/node_acl_knex)[![Coverage Status](https://img.shields.io/coveralls/christophertrudel/node_acl_knex.svg)](https://coveralls.io/r/christophertrudel/node_acl_knex)[![Dependency Status](https://david-dm.org/christophertrudel/node_acl_knex.svg)](https://david-dm.org/christophertrudel/node_acl_knex)[![devDependency Status](https://david-dm.org/christophertrudel/node_acl_knex/dev-status.svg)](https://david-dm.org/christophertrudel/node_acl_knex#info=devDependencies)
 
+##Features & Documentation
+Please see [OptimalBits/node_acl](https://github.com/OptimalBits/node_acl).
+
+##Installation
+
+Using npm:
+
+```javascript
+npm install acl
+npm install knex
+
+npm install acl-knex
+```
+
+
 #Quick Start
 ```
 	Acl = require('acl');

@@ -1,6 +1,6 @@
 {
-	"name": "acl",
-	"version": "0.1.0",
+	"name": "acl-knex",
+	"version": "0.1.1",
 	"description": "A Knex.js backend for node_acl",
 	"keywords": [
 		"middleware",
