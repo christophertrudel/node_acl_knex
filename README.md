@@ -15,7 +15,7 @@ Please see [OptimalBits/node_acl](https://github.com/OptimalBits/node_acl).
 
 Using npm:
 
-```javascript
+javascript
 npm install acl
 npm install knex
 
@@ -24,7 +24,7 @@ npm install acl-knex
 
 
 #Quick Start
-```
+```javascript
 	Acl = require('acl');
 	AclKnexBackend = require('acl_knex');
 	knex = require('knex');
@@ -43,6 +43,8 @@ npm install acl-knex
 ```
 
 #Testing
+```javascript
 npm test
+```
 
 Follow me on Twitter [thetrudel](http://twitter.com/thetrudel)
