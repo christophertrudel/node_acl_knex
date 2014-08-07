@@ -5,11 +5,13 @@ A Knex.js backend for node_acl
 
 Knex is a query builder for PostgreSQL, MySQL and SQLite3 in Node, The Knex backend is to be used as an adapter for [OptimalBits/node_acl](https://github.com/OptimalBits/node_acl).
 
-
 [![BuildStatus](https://travis-ci.org/christophertrudel/node_acl_knex.svg?branch=master)](https://travis-ci.org/christophertrudel/node_acl_knex)[![Coverage Status](https://img.shields.io/coveralls/christophertrudel/node_acl_knex.svg)](https://coveralls.io/r/christophertrudel/node_acl_knex)[![Dependency Status](https://david-dm.org/christophertrudel/node_acl_knex.svg)](https://david-dm.org/christophertrudel/node_acl_knex)[![devDependency Status](https://david-dm.org/christophertrudel/node_acl_knex/dev-status.svg)](https://david-dm.org/christophertrudel/node_acl_knex#info=devDependencies)
 
 ##Features & Documentation
+**Please note that this library currently supports Postgres. MySql and SQLite support coming soon.**
+
 Please see [OptimalBits/node_acl](https://github.com/OptimalBits/node_acl).
+
 
 ##Installation
 
@@ -19,8 +21,13 @@ Using npm:
 npm install acl
 npm install knex
 
+npm install pg (for use with Postgres)
+npm install mysql (for use with MySql, coming soon)
+npm install sqlite3 (for use with SQLite, coming soon)
+
 npm install acl-knex
 ```
+
 
 
 #Quick Start
