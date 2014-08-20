@@ -28,6 +28,13 @@ npm install sqlite3 (for use with SQLite, coming soon)
 npm install acl-knex
 ```
 
+Setup tables:
+```
+node setup.js <<db_name>> <<username>> <<password>> <<prefix>>
+
+eg: node setup.js 'travis_ci_test', 'postgres', '12345', 'acl'
+```
+
 
 
 #Quick Start
