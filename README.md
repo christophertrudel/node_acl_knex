@@ -35,6 +35,14 @@ node setup.js <<db_name>> <<username>> <<password>> <<prefix>>
 eg: node setup.js 'travis_ci_test', 'postgres', '12345', 'acl'
 ```
 
+Or to include it in a script:
+```
+var acl_knex = require('acl-knex');
+new acl_knex.setup(function() {
+	...
+});
+```
+
 
 
 #Quick Start
