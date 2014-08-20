@@ -5,7 +5,7 @@ A Knex.js backend for node_acl
 
 Knex is a query builder for PostgreSQL, MySQL and SQLite3 in Node, The Knex backend is to be used as an adapter for [OptimalBits/node_acl](https://github.com/OptimalBits/node_acl).
 
-[![BuildStatus](https://travis-ci.org/christophertrudel/node_acl_knex.svg?branch=0.1.6)](https://travis-ci.org/christophertrudel/node_acl_knex)[![Coverage Status](https://img.shields.io/coveralls/christophertrudel/node_acl_knex.svg)](https://coveralls.io/r/christophertrudel/node_acl_knex)[![Dependency Status](https://david-dm.org/christophertrudel/node_acl_knex.svg)](https://david-dm.org/christophertrudel/node_acl_knex)[![devDependency Status](https://david-dm.org/christophertrudel/node_acl_knex/dev-status.svg)](https://david-dm.org/christophertrudel/node_acl_knex#info=devDependencies)
+[![BuildStatus](https://travis-ci.org/christophertrudel/node_acl_knex.svg?branch=master)](https://travis-ci.org/christophertrudel/node_acl_knex)[![Coverage Status](https://img.shields.io/coveralls/christophertrudel/node_acl_knex.svg)](https://coveralls.io/r/christophertrudel/node_acl_knex)[![Dependency Status](https://david-dm.org/christophertrudel/node_acl_knex.svg)](https://david-dm.org/christophertrudel/node_acl_knex)[![devDependency Status](https://david-dm.org/christophertrudel/node_acl_knex/dev-status.svg)](https://david-dm.org/christophertrudel/node_acl_knex#info=devDependencies)
 
 ##Features & Documentation
 **Please note that this library currently supports Postgres. MySql and SQLite support coming soon.**
