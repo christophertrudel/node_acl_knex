@@ -14,7 +14,7 @@ describe('Postgres', function () {
 	before(function (done) {
 		var self = this;
 		
-		new KnexBackend().setup(['travis_ci_test', 'postgres'], function(err, db) {
+		new KnexBackend().setup([null, 'travis_ci_test', 'postgres'], function(err, db) {
 			if (err) return done(err);
 			self.backend = new KnexBackend(db, 'postgres', 'acl_');
 			done();

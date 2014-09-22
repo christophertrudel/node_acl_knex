@@ -30,9 +30,11 @@ npm install acl-knex
 
 Setup tables:
 ```
-node setup.js <<db_name>> <<username>> <<password>> <<prefix>> <<db_host>> <<db_port>>
+node setup.js <<db_url>> <<db_name>> <<username>> <<password>> <<prefix>> <<db_host>> <<db_port>>
 <<db_host>>, <<db_port>> default to 127.0.0.1 and 5432 respectively 
 
+eg: node setup.js 'postgres://postgres:12345@192.168.56.10:5432/travis_ci_test'
+eg: node setup.js 'postgres://postgres:12345@192.168.56.10:5432/travis_ci_test', null, null, null, 'acl_'
 eg: node setup.js 'travis_ci_test', 'postgres', '12345', 'acl_'
 eg: node setup.js 'travis_ci_test', 'postgres', '12345', 'acl_', 192.168.56.10, 5432
 ```
