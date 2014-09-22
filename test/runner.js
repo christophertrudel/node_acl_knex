@@ -11,17 +11,32 @@ function run() {
 }
 
 describe('Postgres', function () {
-	before(function (done) {
-		var self = this;
-		
-		new KnexBackend().setup([null, 'travis_ci_test', 'postgres'], function(err, db) {
-			if (err) return done(err);
-			self.backend = new KnexBackend(db, 'postgres', 'acl_');
-			done();
+	describe('with connection string', function () {
+		before(function (done) {
+			var self = this;
+			
+			new KnexBackend().setup(['postgres://postgres@127.0.0.1:5432/travis_ci_test'], function(err, db) {
+				if (err) return done(err);
+				self.backend = new KnexBackend(db, 'postgres', 'acl_');
+				done();
+			});
 		});
+		
+		run();
 	});
-	
-	run();
+	describe('without connection string', function () {
+		before(function (done) {
+			var self = this;
+			
+			new KnexBackend().setup([null, 'travis_ci_test', 'postgres'], function(err, db) {
+				if (err) return done(err);
+				self.backend = new KnexBackend(db, 'postgres', 'acl_');
+				done();
+			});
+		});
+		
+		run();
+	});
 });
 
 // Mysql and SQLite support coming soon.
