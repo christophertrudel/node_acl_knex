@@ -30,13 +30,32 @@ npm install acl-knex
 
 Setup tables:
 ```
-node setup.js <<db_url>> <<db_name>> <<username>> <<password>> <<prefix>> <<db_host>> <<db_port>>
-<<db_host>>, <<db_port>> default to 127.0.0.1 and 5432 respectively 
+node setup.js <<db_name>> <<username>> <<password>> <<prefix>> <<db_host>> <<db_port>> <<db>> <<db_url>>
 
-eg: node setup.js 'postgres://postgres:12345@192.168.56.10:5432/travis_ci_test'
-eg: node setup.js 'postgres://postgres:12345@192.168.56.10:5432/travis_ci_test', null, null, null, 'acl_'
+<<db_host>>, <<db_port>> default to 127.0.0.1 and 5432 respectively 
+<<db>> should actually be a knex object (only prefix would be needed if you pass in the knex object)
+<<db_url>> should be a connection string (only prefix would be needed if you pass in the connection string)
+
 eg: node setup.js 'travis_ci_test', 'postgres', '12345', 'acl_'
 eg: node setup.js 'travis_ci_test', 'postgres', '12345', 'acl_', 192.168.56.10, 5432
+
+eg: node setup.js null, null, null, 'acl_', null, null, 'postgres://postgres:12345@192.168.56.10:5432/travis_ci_test'
+
+typically passing db is for use within code (we use it for rebuilding acl in unit tests)
+var createTables = require('node_modules/acl-knex/lib/createTables').createTables;
+createTables([
+	null,
+	null,
+	null,
+	'node_acl_',
+	null,
+	null,
+	null,
+	db
+], function(err, db) {
+	...
+});
+
 ```
 
 Or to include it in a script:

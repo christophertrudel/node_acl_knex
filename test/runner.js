@@ -11,11 +11,27 @@ function run() {
 }
 
 describe('Postgres', function () {
+	describe('with passing db', function () {
+		before(function (done) {
+			var self = this;
+			var db = knex({
+				client: 'postgres',
+				connection: 'postgres://postgres@127.0.0.1:5432/travis_ci_test'
+			});
+			new KnexBackend().setup([null, null, null, null, null, null, null, db], function(err, db) {
+				if (err) return done(err);
+				self.backend = new KnexBackend(db, 'postgres', 'acl_');
+				done();
+			});
+		});
+		
+		run();
+	});
 	describe('with connection string', function () {
 		before(function (done) {
 			var self = this;
 			
-			new KnexBackend().setup(['postgres://postgres@127.0.0.1:5432/travis_ci_test'], function(err, db) {
+			new KnexBackend().setup([null, null, null, null, null, null, 'postgres://postgres@127.0.0.1:5432/travis_ci_test'], function(err, db) {
 				if (err) return done(err);
 				self.backend = new KnexBackend(db, 'postgres', 'acl_');
 				done();
@@ -28,7 +44,7 @@ describe('Postgres', function () {
 		before(function (done) {
 			var self = this;
 			
-			new KnexBackend().setup([null, 'travis_ci_test', 'postgres'], function(err, db) {
+			new KnexBackend().setup(['travis_ci_test', 'postgres'], function(err, db) {
 				if (err) return done(err);
 				self.backend = new KnexBackend(db, 'postgres', 'acl_');
 				done();
