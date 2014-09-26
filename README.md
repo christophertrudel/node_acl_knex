@@ -42,7 +42,7 @@ eg: node setup.js 'travis_ci_test', 'postgres', '12345', 'acl_', 192.168.56.10, 
 eg: node setup.js null, null, null, 'acl_', null, null, 'postgres://postgres:12345@192.168.56.10:5432/travis_ci_test'
 
 typically passing db is for use within code (we use it for rebuilding acl in unit tests)
-var createTables = require('node_modules/acl-knex/lib/createTables').createTables;
+var createTables = require('node_modules/acl-knex/lib/databaseTasks').createTables;
 createTables([
 	null,
 	null,
