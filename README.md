@@ -83,8 +83,8 @@ new acl_knex.setup(function() {
 			database: 'travis_ci_test'
 		}
 	});
-	
-	var acl = new Acl(new AclKnexBackend(db, 'acl_'));
+
+	var acl = new Acl(new AclKnexBackend(db, 'postgres', 'acl_'));
 ```
 
 #Testing
