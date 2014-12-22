@@ -30,11 +30,20 @@ npm install acl-knex
 
 Setup tables:
 ```
-node setup.js <<db_name>> <<username>> <<password>> <<prefix>> <<db_host>> <<db_port>> <<db>> <<db_url>>
+node setup.js <<db_name>> <<username>> <<password>> <<prefix>> <<db_host>> <<db_port>> <<db>> <<db_url>> <<options>>
 
-<<db_host>>, <<db_port>> default to 127.0.0.1 and 5432 respectively 
+<<db_host>>, <<db_port>> default to 127.0.0.1 and 5432 respectively
 <<db>> should actually be a knex object (only prefix would be needed if you pass in the knex object)
 <<db_url>> should be a connection string (only prefix would be needed if you pass in the connection string)
+<<options>> defaults (allows you to change the tables names)
+{
+	meta: 'meta',
+	parents: 'parents',
+	permissions: 'permissions',
+	resources: 'resources',
+	roles: 'roles',
+	users: 'users'
+}
 
 eg: node setup.js 'travis_ci_test', 'postgres', '12345', 'acl_'
 eg: node setup.js 'travis_ci_test', 'postgres', '12345', 'acl_', 192.168.56.10, 5432
@@ -51,7 +60,8 @@ createTables([
 	null,
 	null,
 	null,
-	db
+	db,
+	options
 ], function(err, db) {
 	...
 });
