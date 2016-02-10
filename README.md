@@ -81,7 +81,7 @@ new acl_knex.setup(function() {
 #Quick Start
 ```javascript
 	Acl = require('acl');
-	AclKnexBackend = require('acl_knex');
+	AclKnexBackend = require('acl-knex');
 	knex = require('knex');
 
 	var db = knex({
