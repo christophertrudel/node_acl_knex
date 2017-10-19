@@ -217,17 +217,22 @@ describe('Postgres', function () {
 // 	run();
 // });
 
-// describe('SQLite', function () {
-// 	before(function (done) {
-// 		var self = this;
-// 		var db = knex({
-// 			client: 'sqlite',
-// 			connection: {
-// 				filename: './travis_ci_test.sqlite'
-// 			}
-// 		});
+describe('SQLite', function () {
+	before(function (done) {
+		var self = this;
+		var db = knex({
+			client: 'sqlite3',
+			connection: {
+				filename: './travis_ci_test.sqlite'
+			}
+		});
 
-// 	});
+		new KnexBackend().setup([null, null, null, null, null, null, null, db], function(err, db) {
+			if (err) return done(err);
+			self.backend = new KnexBackend(db, 'sqlite3', 'acl_');
+			done();
+		});
+	});
 
-// 	run();
-// });
+	run();
+});
