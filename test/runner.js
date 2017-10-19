@@ -223,7 +223,7 @@ describe('SQLite', function () {
 		var db = knex({
 			client: 'sqlite3',
 			connection: {
-				filename: './test.sqlite'
+				filename: './travis_ci_test.sqlite'
 			}
 		});
 
