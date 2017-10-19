@@ -13,179 +13,179 @@ function run() {
 	});
 }
 
-// describe('Postgres', function () {
-// 	describe('testing setup method', function () {
-// 		before(function () {
-// 			error = null;
-// 			options = {
-// 				meta: 'meta',
-// 				parents: 'parents',
-// 				permissions: 'permissions',
-// 				resources: 'resources',
-// 				roles: 'roles',
-// 				users: 'users'
-// 			};
-// 		});
+describe('Postgres', function () {
+	describe('testing setup method', function () {
+		before(function () {
+			error = null;
+			options = {
+				meta: 'meta',
+				parents: 'parents',
+				permissions: 'permissions',
+				resources: 'resources',
+				roles: 'roles',
+				users: 'users'
+			};
+		});
 
-// 		describe('with passing options parameter', function () {
-// 			before(function (done) {
-// 				var self = this;
-// 				var db = knex({
-// 					client: 'postgres',
-// 					connection: 'postgres://postgres@127.0.0.1:5432/travis_ci_test'
-// 				});
+		describe('with passing options parameter', function () {
+			before(function (done) {
+				var self = this;
+				var db = knex({
+					client: 'postgres',
+					connection: 'postgres://postgres@127.0.0.1:5432/travis_ci_test'
+				});
 
-// 				new KnexBackend().setup([null, null, null, null, null, null, null, db, options], function(err, db) {
-// 					error = err;
-// 					if (err) return done(err);
-// 					done();
-// 				});
-// 			});
+				new KnexBackend().setup([null, null, null, null, null, null, null, db, options], function(err, db) {
+					error = err;
+					if (err) return done(err);
+					done();
+				});
+			});
 
-// 			it('should create tables in database with given options', function () {
-// 				assert(!error);
-// 			});
+			it('should create tables in database with given options', function () {
+				assert(!error);
+			});
 
-// 			describe('and then using teardown method', function () {
-// 				before(function (done) {
-// 					var self = this;
-// 					var db = knex({
-// 						client: 'postgres',
-// 						connection: 'postgres://postgres@127.0.0.1:5432/travis_ci_test'
-// 					});
-// 					new KnexBackend().teardown([null, null, null, null, null, null, null, db, options], function(err, db) {
-// 						error = err;
-// 						if (err) return done(err);
-// 						done();
-// 					});
-// 				});
+			describe('and then using teardown method', function () {
+				before(function (done) {
+					var self = this;
+					var db = knex({
+						client: 'postgres',
+						connection: 'postgres://postgres@127.0.0.1:5432/travis_ci_test'
+					});
+					new KnexBackend().teardown([null, null, null, null, null, null, null, db, options], function(err, db) {
+						error = err;
+						if (err) return done(err);
+						done();
+					});
+				});
 
-// 				it('should drop tables in database', function () {
-// 					assert(!error);
-// 				});
-// 			});
-// 		});
+				it('should drop tables in database', function () {
+					assert(!error);
+				});
+			});
+		});
 
-// 		describe('with passing db', function () {
-// 			before(function (done) {
-// 				var self = this;
-// 				var db = knex({
-// 					client: 'postgres',
-// 					connection: 'postgres://postgres@127.0.0.1:5432/travis_ci_test'
-// 				});
-// 				new KnexBackend().setup([null, null, null, null, null, null, null, db], function(err, db) {
-// 					error = err;
-// 					if (err) return done(err);
-// 					done();
-// 				});
-// 			});
+		describe('with passing db', function () {
+			before(function (done) {
+				var self = this;
+				var db = knex({
+					client: 'postgres',
+					connection: 'postgres://postgres@127.0.0.1:5432/travis_ci_test'
+				});
+				new KnexBackend().setup([null, null, null, null, null, null, null, db], function(err, db) {
+					error = err;
+					if (err) return done(err);
+					done();
+				});
+			});
 
-// 			it('should create tables in database', function () {
-// 				assert(!error);
-// 			});
+			it('should create tables in database', function () {
+				assert(!error);
+			});
 
-// 			describe('and then using teardown method', function () {
-// 				before(function (done) {
-// 					var self = this;
-// 					var db = knex({
-// 						client: 'postgres',
-// 						connection: 'postgres://postgres@127.0.0.1:5432/travis_ci_test'
-// 					});
-// 					new KnexBackend().teardown([null, null, null, null, null, null, null, db], function(err, db) {
-// 						error = err;
-// 						if (err) return done(err);
-// 						done();
-// 					});
-// 				});
+			describe('and then using teardown method', function () {
+				before(function (done) {
+					var self = this;
+					var db = knex({
+						client: 'postgres',
+						connection: 'postgres://postgres@127.0.0.1:5432/travis_ci_test'
+					});
+					new KnexBackend().teardown([null, null, null, null, null, null, null, db], function(err, db) {
+						error = err;
+						if (err) return done(err);
+						done();
+					});
+				});
 
-// 				it('should drop tables in database', function () {
-// 					assert(!error);
-// 				});
-// 			});
-// 		});
+				it('should drop tables in database', function () {
+					assert(!error);
+				});
+			});
+		});
 
-// 		describe('with connection string', function () {
-// 			before(function (done) {
-// 				var self = this;
+		describe('with connection string', function () {
+			before(function (done) {
+				var self = this;
 
-// 				new KnexBackend().setup([null, null, null, null, null, null, 'postgres://postgres@127.0.0.1:5432/travis_ci_test'], function(err, db) {
-// 					error = err;
-// 					if (err) return done(err);
-// 					done();
-// 				});
-// 			});
+				new KnexBackend().setup([null, null, null, null, null, null, 'postgres://postgres@127.0.0.1:5432/travis_ci_test'], function(err, db) {
+					error = err;
+					if (err) return done(err);
+					done();
+				});
+			});
 
-// 			it('should create tables in database', function () {
-// 				assert(!error);
-// 			});
+			it('should create tables in database', function () {
+				assert(!error);
+			});
 
-// 			describe('and then using teardown method', function () {
-// 				before(function (done) {
-// 					var self = this;
+			describe('and then using teardown method', function () {
+				before(function (done) {
+					var self = this;
 
-// 					new KnexBackend().teardown([null, null, null, null, null, null, 'postgres://postgres@127.0.0.1:5432/travis_ci_test'], function(err, db) {
-// 						error = err;
-// 						if (err) return done(err);
-// 						done();
-// 					});
-// 				});
+					new KnexBackend().teardown([null, null, null, null, null, null, 'postgres://postgres@127.0.0.1:5432/travis_ci_test'], function(err, db) {
+						error = err;
+						if (err) return done(err);
+						done();
+					});
+				});
 
-// 				it('should drop tables in database', function () {
-// 					assert(!error);
-// 				});
-// 			});
-// 		});
+				it('should drop tables in database', function () {
+					assert(!error);
+				});
+			});
+		});
 
-// 		describe('without connection string', function () {
-// 			before(function (done) {
-// 				var self = this;
+		describe('without connection string', function () {
+			before(function (done) {
+				var self = this;
 
-// 				new KnexBackend().setup(['travis_ci_test', 'postgres'], function(err, db) {
-// 					error = err;
-// 					if (err) return done(err);
-// 					done();
-// 				});
-// 			});
+				new KnexBackend().setup(['travis_ci_test', 'postgres'], function(err, db) {
+					error = err;
+					if (err) return done(err);
+					done();
+				});
+			});
 
-// 			it('should create tables in database', function () {
-// 				assert(!error);
-// 			});
+			it('should create tables in database', function () {
+				assert(!error);
+			});
 
-// 			describe('and then using teardown method', function () {
-// 				before(function (done) {
-// 					var self = this;
+			describe('and then using teardown method', function () {
+				before(function (done) {
+					var self = this;
 
-// 					new KnexBackend().teardown(['travis_ci_test', 'postgres'], function(err, db) {
-// 						error = err;
-// 						if (err) return done(err);
-// 						done();
-// 					});
-// 				});
+					new KnexBackend().teardown(['travis_ci_test', 'postgres'], function(err, db) {
+						error = err;
+						if (err) return done(err);
+						done();
+					});
+				});
 
-// 				it('should drop tables in database', function () {
-// 					assert(!error);
-// 				});
-// 			});
-// 		});
-// 	});
+				it('should drop tables in database', function () {
+					assert(!error);
+				});
+			});
+		});
+	});
 
-// 	describe('Acl Test', function () {
-// 		before(function (done) {
-// 			var self = this;
-// 			var db = knex({
-// 				client: 'postgres',
-// 				connection: 'postgres://postgres@127.0.0.1:5432/travis_ci_test'
-// 			});
-// 			new KnexBackend().setup([null, null, null, null, null, null, null, db], function(err, db) {
-// 				if (err) return done(err);
-// 				self.backend = new KnexBackend(db, 'postgres', 'acl_');
-// 				done();
-// 			});
-// 		});
+	describe('Acl Test', function () {
+		before(function (done) {
+			var self = this;
+			var db = knex({
+				client: 'postgres',
+				connection: 'postgres://postgres@127.0.0.1:5432/travis_ci_test'
+			});
+			new KnexBackend().setup([null, null, null, null, null, null, null, db], function(err, db) {
+				if (err) return done(err);
+				self.backend = new KnexBackend(db, 'postgres', 'acl_');
+				done();
+			});
+		});
 
-// 		run();
-// 	});
-// });
+		run();
+	});
+});
 
 // Mysql and SQLite support coming soon.
 
