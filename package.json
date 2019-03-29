@@ -19,8 +19,8 @@
   "main": "./index.js",
   "dependencies": {
     "async": "0.9.0",
-    "lodash": "2.4.1",
-    "knex": "0.6.22"
+    "knex": "^0.15.2",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "acl": "0.4.3",
