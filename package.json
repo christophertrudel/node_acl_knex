@@ -1,6 +1,6 @@
 {
   "name": "acl-knex",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A Knex.js backend for node_acl",
   "keywords": [
     "middleware",
@@ -14,7 +14,7 @@
   "author": "Christopher Trudel <christophertrudel@gmail.com>",
   "homepage": "https://github.com/christophertrudel/node_acl_knex",
   "engines": {
-    "node": ">= 0.4.1"
+    "node": ">= 10"
   },
   "main": "./index.js",
   "dependencies": {
